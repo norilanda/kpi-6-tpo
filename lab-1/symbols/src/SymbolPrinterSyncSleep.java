@@ -1,13 +1,14 @@
+public class SymbolPrinterSyncSleep extends SymbolPrinter{
 
-
-public class SymbolPrinter {
-
-    protected int charsPrinted = 0;
-    protected static int CHAR_NUMBER = 5_000;
-
+    @Override
     public void PrintSymbol(char symbol) {
         for (int i = 0; i < CHAR_NUMBER; i++) {
             System.out.print(symbol);
+            try {
+                Thread.sleep(9);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
             synchronized (this) {
                 charsPrinted++;
 

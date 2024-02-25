@@ -98,7 +98,7 @@ public class Main {
             public void run() {
                 for (int i = 0; i < iterationsNumber; i++) {
                     synchronized (counter) {
-                        counter.increment();
+                        counter.incrementSyncObj();
                     }
                 }
             }
@@ -109,7 +109,7 @@ public class Main {
             public void run() {
                 for (int i = 0; i < iterationsNumber; i++) {
                     synchronized (counter) {
-                        counter.decrement();
+                        counter.decrementSyncObj();
                     }
                 }
             }
