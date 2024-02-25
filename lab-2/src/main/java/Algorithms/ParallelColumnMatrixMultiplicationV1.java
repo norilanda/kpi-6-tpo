@@ -95,7 +95,6 @@ class MatrixThreadV1 implements Runnable {
 //                System.out.println(row + ") rowIndex: " + rowIndex);
 
                 for (int col = 0; col < columnsB.columns.length; col++) {
-                    // - ?
                     var colIndex = (rowIndexStart + iteration * columnsB.columns.length + matrixSize) % matrixSize + col;
 //                    System.out.print(col + ") colIndex: " + colIndex);
 
