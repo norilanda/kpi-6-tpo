@@ -16,8 +16,10 @@ public class AtomicBankReference implements IBank{
     public void transfer(int from, int to, int amount) {
         var updatedAccountState = accounts.updateAndGet(prevArrayState -> {
             var arrayStateCopy =  prevArrayState.accounts.clone();
+            
             arrayStateCopy[from] -=amount;
             arrayStateCopy[to] += amount;
+
             int newTransactionNumber = prevArrayState.transactionNumber + 1;
             return new TransactionState(arrayStateCopy, newTransactionNumber);
         }); // will updatedAccountState be the same object as value of the accounts???

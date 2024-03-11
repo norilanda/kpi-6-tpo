@@ -6,10 +6,11 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         int bufferSize = 10;
-        int numberToGeneratePerProducer = 5;
-        int producersNumber = 3;
-        int consumerNumbers = 4;
+        int numberToGeneratePerProducer = 10;
+        int producersNumber = 4;
+        int consumerNumbers = 2;
 
+        demo(bufferSize, numberToGeneratePerProducer, producersNumber, consumerNumbers);
     }
 
     public static int[] demo(
